@@ -32,8 +32,6 @@ node {
     }
     stage('Run image'){
         echo "Hello World!"
-        docker stop myapache || :
-        docker rm myapache || :
-        docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest
+        sh "hostname"
     }
 }
