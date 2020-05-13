@@ -33,5 +33,7 @@ node {
     stage('Run image'){
         echo "Hello World!"
         sh "hostname"
+        sh "docker stop myapache || :"
+        
     }
 }
