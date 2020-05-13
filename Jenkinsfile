@@ -31,8 +31,6 @@ node {
                 echo "Trying to Push Docker Build to DockerHub"
     }
     stage('Run image'){
-        sh docker stop myapache || :
-        sh docker rm myapache || :
-        sh docker run -it -d -p 8081:80 --name myapache grigciulache\hellohtml:latest
+        echo "Hello World!"
     }
 }
