@@ -30,7 +30,7 @@ node {
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
- */   
+   
     stage('Run image'){
         echo "Hello World!"
         sh "hostname"
@@ -39,4 +39,5 @@ node {
         sh "docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest"
 
     }
+*/ 
 }
