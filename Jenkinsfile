@@ -19,15 +19,6 @@ node {
             echo "Tests passed"
         }
     }
-
-    stage('Run image'){
-        echo "Hello World!"
-        sh "hostname"
-        sh "docker stop myapache || :"
-        sh "docker rm myapache || :"
-        sh "docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest"
-
-    }
     stage('Push image') {
          
 			You would need to first register with DockerHub before you can push images to your account
@@ -37,6 +28,13 @@ node {
             app.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
+    }   
+    stage('Run image'){
+        echo "Hello World!"
+        sh "hostname"
+        sh "docker stop myapache || :"
+        sh "docker rm myapache || :"
+        sh "docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest"
     }
- 
+    
 }
