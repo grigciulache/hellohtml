@@ -19,18 +19,7 @@ node {
             echo "Tests passed"
         }
     }
-/*
-    stage('Push image') {
-         
-			You would need to first register with DockerHub before you can push images to your account
-		
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-            } 
-                echo "Trying to Push Docker Build to DockerHub"
-    }
-*/
+
     stage('Run image'){
         echo "Hello World!"
         sh "hostname"
@@ -38,6 +27,16 @@ node {
         sh "docker rm myapache || :"
         sh "docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest"
 
+    }
+    stage('Push image') {
+         
+			You would need to first register with DockerHub before you can push images to your account
+		
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hubs') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+            } 
+                echo "Trying to Push Docker Build to DockerHub"
     }
  
 }
