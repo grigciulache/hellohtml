@@ -26,7 +26,7 @@ node {
 		
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
             app.push("${env.BUILD_NUMBER}")
-            app.push("manual")
+            app.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
