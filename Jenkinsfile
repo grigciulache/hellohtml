@@ -34,7 +34,7 @@ node {
         sh "hostname"
         sh "docker stop myapache || :"
         sh "docker rm myapache || :"
-        sh "docker run -it -d -p 8081:80 --name myapache grigciulache/hellohtml:latest"
+        sh "docker run -it -d -p 80:80 --name myapache grigciulache/hellohtml:latest"
     }
     
 }
