@@ -36,5 +36,5 @@ node {
         sh "docker rm myapache || :"
         sh "docker run -it -d -p 80:80 --name myapache grigciulache/hellohtml:latest"
     }
-    
+    /* seems to be a sinc issue. Acknloedge, to be fixed */
 }
